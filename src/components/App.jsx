@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import SearchForm from './Search_Form.jsx';
 
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+const App = () => {
 
-    }
-  }
-
-  render() {
-    return(
-      <div>Webpack is Bunled</div>
-    )
-  }
+  return(
+    <div>
+      <SearchForm />
+    </div>
+  )
 }
 
 export default App;

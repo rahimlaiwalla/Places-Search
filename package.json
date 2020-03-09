@@ -4,7 +4,9 @@
   "description": "Search Places",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "nodemon server/index.js",
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
