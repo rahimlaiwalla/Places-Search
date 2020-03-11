@@ -53,13 +53,13 @@ class SearchForm extends Component {
           </label>
             <input type="submit" value="Submit" />
         </form>
-        <ul>
+        <div>
           {
             this.state.placeList.map( place => {
               return <PlaceList place={place} />
             })
           }
-        </ul>
+        </div>
       </div>
     )
   }

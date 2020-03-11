@@ -10,7 +10,7 @@ const PlaceList = (props) => {
   // }
 
   return(
-    <li style={{border: '1px solid black'}}>
+    <div style={{border: '1px solid black', marginBottom: 10}}>
       {/* {
         hrefString ?
         (
@@ -22,10 +22,10 @@ const PlaceList = (props) => {
         )
         
       } */}
-      <div>{props.place.name}</div>
+      <div><b>{props.place.name}</b></div>
       <div>{props.place.formatted_address}</div>
       <div>{`Rating: ${props.place.rating}`}</div>
-    </li>
+    </div>
   )
 }
 
