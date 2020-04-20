@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import SearchForm from './Search_Form.jsx';
+// import SearchForm from './Search_Form.jsx';
+import Main from './main.jsx';
+import Navigation from './navigation.jsx';
+import Footer from './Footer.jsx';
 
 
 const App = () => {
 
   return(
     <div>
-      <SearchForm />
+      <Navigation />
+      <Main />
+      <Footer />
     </div>
   )
 }

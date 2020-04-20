@@ -13,4 +13,8 @@ app.use(bodyparser());
 
 app.post('/search', controller.postSearch);
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+})
+
 app.listen(PORT, () => console.log(`Express server started on port ${PORT}`));

@@ -41,7 +41,7 @@ class SearchForm extends Component {
 
   render() {
     return(
-      <div>
+      <section className='underHeader'>
         <form onSubmit={this.onSearchSubmit}>
           <label>
             {'Search for...   '}
@@ -60,7 +60,7 @@ class SearchForm extends Component {
             })
           }
         </div>
-      </div>
+      </section>
     )
   }
 }

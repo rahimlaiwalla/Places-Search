@@ -1,0 +1,126 @@
+#Places-Search {
+  margin: auto;
+  width: 960px;
+  /* border: 1px solid black; */
+}
+
+/*Header*/
+/*
+  clearfix to contain floated elements in header
+*/
+.header:before,
+.header:after {
+  content: "";
+  display: table;
+}
+
+.header:after {
+  clear: both;
+}
+
+.header {
+  clear: both;
+  /* border: 1px solid black */
+}
+
+.main-logo {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+
+.navMenu {
+  float: right;
+  width: 60%;
+  /* text-align: right; */
+  margin-top: 56px;
+}
+
+.navUl {
+  list-style-type: none;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.navUl li {
+  display: inline-block;
+}
+
+.navUl,
+.navUl li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Main Content*/
+.underHeader {
+  display: block;
+  box-sizing: border-box;
+  width: 960px;
+  height: auto;
+  /* border: 1px solid red; */
+}
+
+/*Footer*/
+.footer {
+  display: block;
+  width: 960px;
+  height: 70px;
+}
+
+.footer:before,
+.footer:after {
+  content: "";
+  display: table;
+}
+
+.footer:after {
+  clear: both;
+}
+
+.footer {
+  clear: both;
+  /* border: 1px solid black */
+}
+
+.footer-logo {
+  float: left;
+  width: 20%;
+  text-align: center;
+  margin-top: 35px;
+}
+
+
+.navMenu-footer {
+  float: right;
+  width: 60%;
+  margin-top: 20px
+}
+
+.navUl-footer {
+  list-style-type: none;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.navUl-footer li {
+  display: inline-block;
+}
+
+.navUl-footer,
+.navUl-footer li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navUl-footer li a {
+  font-size: small;
+}
