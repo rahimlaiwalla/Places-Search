@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom';
 
 const Footer = () => {
   return(
-    <footer class="footer">
-      <small class="footer-logo">&copy; Places Search</small>
-      <nav class="navMenu-footer">
-          <ul class="navUl-footer">
+    <footer className="footer">
+      <small className="footer-logo">&copy; Places Search</small>
+      <nav className="navMenu-footer">
+          <ul className="navUl-footer">
             <li >
-              <Link to='/'>Home</Link>
+              <Link to='/search'>Home</Link>
             </li>
             <li>
               <Link to='/about'>About</Link>

@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../../logo.svg';
+
 
 const Navigation = () => {
   return(
-    <header class="header">
-      <h1 class="main-logo">Search&nbsp; Places</h1>
-      <nav class="navMenu">
-        <ul class="navUl">
+    <header className="header">
+      <div className="main-logo">
+        <img src={Logo} className="logo" />
+        <h1 className="appName">Search&nbsp; Places</h1>
+      </div>
+      <nav className="navMenu">
+        <ul className="navUl">
           <li >
-            <Link to='/'>Home</Link>
+            <Link to='/search'>Home</Link>
           </li>
           <li>
             <Link to='/about'>About</Link>

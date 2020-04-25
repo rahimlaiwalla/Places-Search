@@ -1,7 +1,15 @@
+html, body {
+  height: 100%;
+}
+
 #Places-Search {
+  /* width: 960px; */
+  width: 100%;
+  /* width: 960px; */
+  height: 100%;
   margin: auto;
-  width: 960px;
   /* border: 1px solid black; */
+
 }
 
 /*Header*/
@@ -20,13 +28,32 @@
 
 .header {
   clear: both;
+  /* width: 75%; */
+  width: 960px;
+  margin: 0 auto;
+  
   /* border: 1px solid black */
 }
 
 .main-logo {
   float: left;
-  width: 20%;
-  text-align: center;
+  width: 97px;
+  height: 100%
+
+}
+
+.logo {
+  height: 80px;
+  width:  80px;
+  padding-left: 7%;
+}
+
+.appName {
+  position: relative;
+  margin-top: -35px;
+  /* padding-right: -50%; */
+  /* padding-left: 29%; */
+  
 }
 
 
@@ -51,7 +78,7 @@
 .navUl,
 .navUl li {
   padding-left: 10px;
-  padding-right: 10px;
+  /* padding-right: 10px; */
 }
 
 a {
@@ -71,8 +98,10 @@ a {
 /*Footer*/
 .footer {
   display: block;
+  /* width: 75%; */
   width: 960px;
   height: 70px;
+  margin: 0 auto;
 }
 
 .footer:before,
@@ -93,7 +122,7 @@ a {
 .footer-logo {
   float: left;
   width: 20%;
-  text-align: center;
+  /* text-align: center; */
   margin-top: 35px;
 }
 
@@ -118,9 +147,75 @@ a {
 .navUl-footer,
 .navUl-footer li {
   padding-left: 10px;
-  padding-right: 10px;
+  /* padding-right: 10px; */
 }
 
 .navUl-footer li a {
   font-size: small;
+}
+
+/*Add Image under Header for Search Form*/
+.searchFormUnderHeader{
+  width: 100%;
+  height: 500px;
+  /* background-image: url(./carosel-images/cookies.jpeg); */
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%; */
+  z-index: 0;
+  position: relative;
+
+}
+
+/* .carouselImages{
+  width: 100%;
+  height: 500px;
+} */
+
+.carouselImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  /* background-position: 50% 50%; */
+}
+
+/* .searchFormUnderHeader{
+  width: 100%;
+  height: 500px;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 0;
+  position: relative;
+
+} */
+
+.searchForm {
+  display: block;
+  box-sizing: border-box;
+  /* width: 57.8%; */
+  width: 29.7%;
+  z-index: 1;
+  background-color: white;
+  border-radius: 3px;
+  position: absolute;
+  top: 40%;
+  margin-top: -100px;
+  /* left: 21.3%; */
+  left: 35.15%;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* .searchForm {
+top: 0;
+margin-top: 0;
+} */
+
+.searchResults {
+  display: block;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+  /* padding-top: 40px;; */
 }

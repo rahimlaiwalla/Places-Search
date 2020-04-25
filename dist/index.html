@@ -11,5 +11,42 @@
     <h4>Webpack Not Bundled</h4>
   </div>
     <script type="text/javascript" src="main.js"></script>
+    <script>
+      window.addEventListener('resize', event => {
+        let searchFormUnderHeader = document.getElementsByClassName('searchFormUnderHeader')[0];
+        // console.log(searchFormUnderHeader);
+        if(window.innerWidth < 960){
+          searchFormUnderHeader.style.width = "960px"
+        } else {
+          searchFormUnderHeader.style.width = window.innerWidth +'px';
+        }
+      })
+
+      // window.addEventListener('load', () => {
+      //   let carousel = document.getElementsByClassName('carouselImages')[0];
+      //   let slides = carousel.getElementsByTagName('IMG');
+      //   let slidesArray = Array.from(slides);
+      //   console.log(slides);
+
+      //   counter = 0,
+      //   slides[0].style.display = "block";
+
+      //   setInterval(()=> {
+      //     counter++;
+      //     if(counter === slidesArray.length){
+      //       slides[counter - 1].style.display = "none";
+      //       slides[0].style.display = "block";
+      //       counter = 0;
+      //     } else {
+      //       slides[counter - 1].style.display = "none";
+      //       slides[counter].style.display = "block";
+      //     }
+
+      //   },
+      //   15000)
+
+      //   })
+      
+    </script>
 </body>
 </html>
