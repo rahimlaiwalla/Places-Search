@@ -4,7 +4,7 @@ const fs = require('fs');
 const bodyparser = require('body-parser');
 const controller = require('./controller.js');
 
-const PORT = 3000;
+const PORT = 3001;
 
 const app = express();
 

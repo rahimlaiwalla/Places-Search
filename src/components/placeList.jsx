@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../../config';
 
 const PlaceList = (props) => {
 
@@ -8,9 +9,17 @@ const PlaceList = (props) => {
   //   let hrefArraySplit = props.place.photos[0].html_attributions[0].split('"');
   //   hrefString = hrefArraySplit[1];
   // }
+  let photoUrl = ''
+
+  if(props.place.photos){
+    let photoRef = props.place.photos[0].photo_reference
+    photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxheight=150&photoreference=${photoRef}&key=${config.googleAPI_Key}`
+
+    // console.log('Photoref: ', photoRef);
+  }
 
   return(
-    <div style={{border: '1px solid black', marginBottom: 10}}>
+    <div style={{marginBottom: '30px'}} className="placeListItem intro">
       {/* {
         hrefString ?
         (
@@ -22,9 +31,12 @@ const PlaceList = (props) => {
         )
         
       } */}
-      <div><b>{props.place.name}</b></div>
-      <div>{props.place.formatted_address}</div>
-      <div>{`Rating: ${props.place.rating}`}</div>
+      <img src={photoUrl} className='placeListImage' ></img>
+      <div className="placeListDescription">
+        <div style={{fontSize: '20px'}}><b>{props.place.name}</b></div>
+        <div>{props.place.formatted_address}</div>
+        <div>{`Rating: ${props.place.rating}`}</div>
+      </div>
     </div>
   )
 }

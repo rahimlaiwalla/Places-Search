@@ -20,12 +20,31 @@ const postSearch = (req, res) => {
       let placeUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${formattedPlace}&location=${lat},${lng}&radius=1600&key=${config.googleAPI_Key}`
       Axios.get(placeUrl)
         .then(response => {
+
           // console.log(response.data);
-          res.send(response.data);
+          // console.log('PHOTO REFERENCE: ', response.data.photos[0].photo_reference)
+          
+              res.send(response.data);
         })
     })
 }
 
+const getPhotos = function(array) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i].photos){
+      let photoRef = array[i].photos[0].photo_reference
+      // console.log(`PHOTO REFERENCE @ INDEX ${i}: `, photoRef) 
+      let photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=40&photoreference=${photoRef}&key=${config.googleAPI_Key}`
+      Axios.get(photoUrl)
+        .then((response) => {
+          console.log(`PHOTOS RESPONSE.REQUEST.RES.INCOMINGMESSAGE @ INDEX ${i}: `, response.request.res.IncomingMessage)
+        })
+    }
+  }
+  return;
+}
+
 module.exports = {
-  postSearch: postSearch
+  postSearch: postSearch,
+  getPhotos: getPhotos
 }
