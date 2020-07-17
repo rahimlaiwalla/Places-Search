@@ -164,11 +164,11 @@ class SearchForm extends Component {
           <form onSubmit={this.onSearchSubmit}>
             <label>
               {'Search for...   '}
-              <input type="text" value={this.state.searchValue} onChange={this.onSearchChange} />
+              <input type="text" value={this.state.searchValue} onChange={this.onSearchChange} required/>
             </label>
             <label>
               {'   in Zip Code...   '}
-              <input type="number" value={this.state.zipCode} onChange={this.onZipChange} />
+              <input type="number" value={this.state.zipCode} onChange={this.onZipChange} required/>
             </label>
             <input className="submitForm" type="submit" value="Submit" />
               {/* <Link to={`/search/${this.state.zipCode}`}>Submit</Link> */}

@@ -28,7 +28,7 @@ app.get('/search/readDir', (req, res) => {
 
 app.get('/photo-reference/:ref', (req, res) => {
   const photoRef = req.params.ref;
-  console.log('PHOTO REF IN INDEX.JS: ', photoRef);
+  // console.log('PHOTO REF IN INDEX.JS: ', photoRef);
   const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxheight=150&photoreference=${photoRef}&key=${process.env.REACT_APP_googleAPI_Key}`
   res.send(photoUrl);
 

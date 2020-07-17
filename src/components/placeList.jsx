@@ -21,7 +21,7 @@ function PlaceList(props){
   
       Axios.get(`/photo-reference/${photoRef}`)
         .then(response => {
-          console.log(typeof(response.data));
+          // console.log(typeof(response.data));
           setPhotoUrl(response.data);
         })
   
