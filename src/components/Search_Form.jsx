@@ -5,6 +5,7 @@ import PlaceList from './placeList.jsx'
 import PlaceArray from './placeArray.jsx';
 import ImageComponent from './ImageComponent.jsx'
 import {Link, Switch, Route, Redirect} from 'react-router-dom';
+import { getPhotos } from '../../server/controller';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -31,7 +32,9 @@ class SearchForm extends Component {
   componentDidMount(){
     Axios.get('/search/readDir')
       .then(response => {
+        //obtain file names only and set the array of names to carouselImages
         const carouselImages = response.data;
+        // console.log('CAROUSEL IMAGES FROM RESPONSE.DATA: ', carouselImages);
         this.setState({carouselImages});
 
         // let arrayImageElements = this.state.carouselImages.map( imagePath => {
@@ -39,21 +42,34 @@ class SearchForm extends Component {
         // })
         // this.setState({arrayImageElements});
 
+        //obtain array like data structure (HTML Collection) of all tags in classname: carouselImages at the 0th index because I only care about the first className
         let carousel = document.getElementsByClassName('carouselImages')[0];
+        // console.log('DOCUMENT.GETELEMENTSBYCLASSNAME(CAROUSELIMAGES): ', document.getElementsByClassName('carouselImages'));
+        // console.log('CAROUSELIMAGES CLASSNAME DATA: ', carousel);
+
+        //obtain all image tags in the HTML Collection from above
         let slides = carousel.getElementsByTagName('IMG');
+        console.log('SLIDES: ', slides);
+        //convert HTML collection into an array
         let slidesArray = Array.from(slides);
-        console.log(slides);
+        console.log('slides variable in component did mount: ', slides);
         this.setState({arrayImageElements: slidesArray});
 
   
         this.setState({imgIndex: 2});
         this.state.arrayImageElements[2].style.display = "block";
 
+        //the timer below controls the how fast the carousel changes
+        //if this is active, make sure the clear and set interveral
+          //in left and righ click are active too
+
         // this.setState({timer: setInterval(this.slide, 20000)})
       })
   }
 
+  //Slide function is called in setState of component did mount
   slide(){
+      //go through the array of images, set via arrayImageElements in componentDidMount
       let counter = this.state.imgIndex + 1;
       this.setState({imgIndex: counter});
       if(counter === this.state.arrayImageElements.length){
@@ -152,7 +168,7 @@ class SearchForm extends Component {
             </label>
             <label>
               {'   in Zip Code...   '}
-              <input type="text" value={this.state.zipCode} onChange={this.onZipChange} />
+              <input type="number" value={this.state.zipCode} onChange={this.onZipChange} />
             </label>
             <input className="submitForm" type="submit" value="Submit" />
               {/* <Link to={`/search/${this.state.zipCode}`}>Submit</Link> */}

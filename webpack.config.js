@@ -1,3 +1,6 @@
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
   module: {
     rules: [
@@ -20,5 +23,6 @@ module.exports = {
         ],
       }
     ]
-  }
+  },
+  plugins: [new webpack.IgnorePlugin(/config/)]
 };

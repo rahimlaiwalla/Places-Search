@@ -3,8 +3,10 @@ const path = require('path');
 const fs = require('fs');
 const bodyparser = require('body-parser');
 const controller = require('./controller.js');
+// const config = require('../config.js')
+require('dotenv').config();
 
-const PORT = 3000;
+const PORT = 3001;
 
 const app = express();
 
@@ -22,6 +24,14 @@ app.get('/search/readDir', (req, res) => {
       res.send(files);
     }
   })
+})
+
+app.get('/photo-reference/:ref', (req, res) => {
+  const photoRef = req.params.ref;
+  console.log('PHOTO REF IN INDEX.JS: ', photoRef);
+  const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxheight=150&photoreference=${photoRef}&key=${process.env.REACT_APP_googleAPI_Key}`
+  res.send(photoUrl);
+
 })
 
 app.post('/search', controller.postSearch);

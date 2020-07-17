@@ -216,6 +216,109 @@ margin-top: 0;
 .searchResults {
   display: block;
   box-sizing: border-box;
+  width: 960px;
+  margin: auto;
   /* border: 1px solid black; */
   /* padding-top: 40px;; */
+}
+
+.aboutUnderHeader {
+  margin: 0 auto;
+}
+
+.myPicture {
+  box-sizing: border-box;
+  max-width:2500px;
+  max-height:300px;
+  width: auto;
+  height: auto;
+}
+
+.welcome {
+  float: left;
+  width: 66%;
+  margin-top: 50px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.pictureAside {
+  float: right;
+  width: 33%;
+}
+
+.intro:before,
+.intro:after {
+  content: "";
+  display: table;
+}
+
+.intro:after {
+  clear: both;
+}
+
+.intro {
+  clear: both;
+  /* width: 75%; */
+  width: 960px;
+  margin: 0 auto;
+  
+  /* border: 1px solid black */
+}
+
+.projects {
+  box-sizing: border-box;
+  margin-top: 100px;
+}
+
+.projectTitle {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.haveARideImg {
+  float: left;
+}
+
+.haveARide_description{
+  float: right;
+}
+
+.fecBlock {
+  margin-top: 100px;
+}
+
+.fecImg {
+  float: right;
+}
+
+.fecSoloImage {
+  width: 145px;
+  margin-right: 10px;
+}
+
+.fec_description {
+  float: left;
+}
+
+.placeListItem {
+  height: 200px;
+}
+
+.placeListImage {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 25px 0px 0px 40px;
+
+}
+
+.placeListDescription {
+  float: right;
+  width: 700px;
+  /* border: solid 1px red; */
+  margin: 25px 40px 25px 0px;
+  line-height: 30px;
 }
